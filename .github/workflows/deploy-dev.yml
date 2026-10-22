@@ -1,0 +1,19 @@
+name: Deploy dev
+
+# Publishes the dev site, https://astrarocket.github.io/simulator-dev/, from
+# the dev branch of AstraRocket/simulator. The build lives there, in
+# .github/workflows/channel-deploy.yml; this file is the "Run workflow" button.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    uses: AstraRocket/simulator/.github/workflows/channel-deploy.yml@dev
+    with:
+      channel: dev
